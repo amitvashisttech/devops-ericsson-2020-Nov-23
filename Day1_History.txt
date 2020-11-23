@@ -1,0 +1,237 @@
+    1  ip addr 
+    2  apt-get update ; apt-get install git -y 
+    3  git --version 
+    4  ls
+    5  mkdir MyGitLocalRepo
+    6  ls
+    7  cd MyGitLocalRepo/
+    8  ls
+    9  git status 
+   10  git init 
+   11  ls -a 
+   12  git config --list 
+   13  git config --global user.name "Amit Vashist"
+   14  git config --global user.email "amitvashist7@outlook.com"
+   15  git config --list 
+   16  echo "Hello World" > README.md
+   17  ls
+   18  cat README.md 
+   19  git status 
+   20  git add README.md
+   21  git status 
+   22  git logs 
+   23  git log
+   24  git commit -m "Initial Commit"
+   25  git log
+   26  history 
+   27  ls -a 
+   28  git status 
+   29  echo "Welcome to Git Demo - Test 1" > Welcome.txt
+   30  ls
+   31  git status 
+   32  echo "test 2 for readme" >> README.md 
+   33  cat README.md 
+   34  git status 
+   35  git add README.md
+   36  git status 
+   37  git add .
+   38  git status 
+   39  git commit -m "Add: New File Welcome"
+   40  git status 
+   41  git log 
+   42  history 
+   43  git add .
+   44  ls
+   45  for i in {1..10}; do echo "Hello $i" >> Hello_$i.txt;done
+   46  ls
+   47  cat Hello_1.txt 
+   48  cat Hello_10.txt
+   49  ls
+   50  git status 
+   51  git add Hello_1.txt
+   52  git status 
+   53  git add . 
+   54  git status 
+   55  git commit -m "Hello Files"
+   56  git log
+   57  echo "Apple Pie"
+   58  echo "Apple Pie" | git hash-object --stdin
+   59  echo "Apple Pie 2" | git hash-object --stdin
+   60  echo "Amit Vashist" | git hash-object --stdin
+   61  echo "Apple Pie" | git hash-object --stdin 
+   62  echo "Apple Pie" | git hash-object --stdin -w
+   63  echo "Amit Vashist" | git hash-object --stdin -w
+   64  git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -t 
+   65  git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -p
+   66  git cat-file c42fe628543c9f330ea51dea312d32cd72d7f454 -p
+   67  ls
+   68  ls -ld
+   69  ls -a
+   70  cd .git/
+   71  ls
+   72  cd objects/
+   73  ls
+   74  ls-ltr c4/
+   75  ls -ltr c4/
+   76  ls -ltr 23/
+   77  ls
+   78  cd ../../
+   79  ls
+   80  cd - 
+   81  ls
+   82  ls -R .
+   83  ls
+   84  cd ..
+   85  l
+   86  git logs 
+   87  git log
+   88  git diff 572110..a4bb5d
+   89  ls
+   90  git log
+   91  git diff a4bb5df3..03258e
+   92  echo "test 3 for readme" >> README.md 
+   93  git add . ; git commit -m "Test 3 ReadME"
+   94  git log
+   95  git diff 4e9b2d2..03258e3
+   96  git log
+   97  git diff 4e9b2d2..a4bb5df3c
+   98  man git diff 
+   99  git diff 4e9b2d2..a4bb5df3c
+  100  ls
+  101  rm -rf Hello_*.txt
+  102  ls
+  103  git statis 
+  104  git status
+  105  git add . 
+  106  git status
+  107  git commit -m "Housekeeping of Hello Files"
+  108  ls
+  109  git log 
+  110  cd ..
+  111  ls
+  112  mv MyGitLocalRepo /tmp/
+  113  cd /tmp/
+  114  ls
+  115  chmod 775 -R MyGitLocalRepo 
+  116  chmod 775 -R MyGitLocalRepo/
+  117  chmod 777 -R MyGitLocalRepo/
+  118  ls
+  119  cd MyGitLocalRepo/
+  120  ls
+  121  git log 
+  122  cd 
+  123  ls -a 
+  124  cat .gitconfig 
+  125  ls
+  126  cd /tmp/
+  127  kls'
+  128  ls
+  129  cd MyGitLocalRepo/
+  130  ls
+  131  git branch
+  132  cat .git/HEAD 
+  133  cat .git/refs/heads/master 
+  134  git log | more
+  135  ls
+  136  git branch UAT
+  137  git branch Stage
+  138  git branch Prod
+  139  git branch
+  140  git checkout UAT
+  141  git branch
+  142  ls
+  143  git log 
+  144  ls
+  145  echo  "Welcome to UAT Branch" > UAT.txt
+  146  ls
+  147  git status 
+  148  git add . ; git commit -m "UAT.txt"
+  149  git status 
+  150  git log 
+  151  git branch 
+  152  git show HEAD
+  153  cat .git/HEAD 
+  154  cat .git/refs/heads/UAT 
+  155  cat .git/refs/heads/master 
+  156  ls
+  157  git branch 
+  158  git checkout master 
+  159  ls
+  160  git log 
+  161  lsl
+  162  ls
+  163  git branch
+  164  git checkout Stage; echo "Welcome to Stage" > Stage.txt; git add . ; git commit -m "Stage File"
+  165  git branch
+  166  git log 
+  167  ls
+  168  git checkout Prod; echo "Welcome to Prod" > Prod.txt; git add . ; git commit -m "Prod File"
+  169  ls
+  170  git checkout master 
+  171  ls
+  172  git diff UAT..Prod
+  173  git diff UAT..Prod..Stage
+  174  git diff Prod..Stage
+  175  git log Prod..Stage
+  176  git log master..Stage
+  177  git log master..Prod
+  178  ls
+  179  git merge UAT
+  180  ls
+  181  git branch 
+  182  git status 
+  183  git log 
+  184  git merge Stage
+  185  git log 
+  186  ls 
+  187  git branch 
+  188  ls
+  189  echo  "Test 6" >> README.md 
+  190  git add . ; git commit -m "README- Test 6"
+  191  git checkout Prod
+  192  ls
+  193  echo  "Test 7" >> README.md 
+  194  git add . ; git commit -m "README- Test 7"
+  195  cat README.md 
+  196  git checkout master
+  197  cat README.md 
+  198  git merge Prod
+  199  git status 
+  200  git add . 
+  201  git commit -m "README"
+  202  git add . 
+  203  git status 
+  204  git logs 
+  205  git log
+  206  ls
+  207  cat README.md 
+  208  vim README.md 
+  209  git add . 
+  210  git commit -m "README Update"
+  211  vim README.md 
+  212  ls
+  213  history 
+  214  ls
+  215  git checkout Prod
+  216  ls
+  217  git merge Stage
+  218  ls
+  219  git merge UAT -m "Merging my UAT Branch into Prod Branch"
+  220  ls
+  221  history 
+  222  git remote add origin https://github.com/amitvashisttech/devops-ericsson-2020-Nov-23.git
+  223  git config --list 
+  224  git push -u origin master
+  225  git checkout Prod
+  226  git push -u origin Prod
+  227  git checkout UAT
+  228  git push -u origin UAT
+  229  git branch 
+  230  git checkout master 
+  231  git log 
+  232  ls
+  233  git pull 
+  234  ls
+  235  cat Hostname.txt 
+  236  history 
+  237  history > Day1_History.txt
