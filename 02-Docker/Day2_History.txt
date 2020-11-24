@@ -16,3 +16,45 @@
    16  cd 02-Docker/
    17  ls
    18  history > Day2_History.txt
+   19  cd ..
+   20  ls
+   21  git add . ; git commit -m "02-Docker"; git push 
+   22  start docker 
+   23  systemctl start docker
+   24  systemctl status docker
+   25  history 
+   26  ls
+   27  git config list
+   28  git config --list
+   29  ls
+   30  history 
+   31  git config --list
+   32  ls
+   33  echo "======================= Demo 2 ==========================="
+   34  docker images 
+   35  cat /etc/os-release 
+   36  docker run -it ubuntu
+   37  docker ps 
+   38  docker ps -a
+   39  docker start 61c405630d9d
+   40  docker ps 
+   41  docker attach 61c405630d9d
+   42  docker ps 
+   43  docker attach 61c405630d9d
+   44  docker ps 
+   45  docker attach 61c405630d9d
+   46  ls
+   47  docker run -it --name mytest-01 ubuntu:16.04
+   48  docker ps 
+   49  docker ps -q
+   50  docker stop $(docker ps -q)
+   51  docker ps 
+   52  docker ps -a 
+   53  docker ps -aq
+   54  docker rm $(docker ps -aq)
+   55  docker ps -a 
+   56  docker images 
+   57  ls
+   58  history 
+   59  ls
+   60  history > 02-Docker/Day2_History.txt 
