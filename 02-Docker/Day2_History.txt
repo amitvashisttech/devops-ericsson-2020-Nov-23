@@ -58,3 +58,71 @@
    58  history 
    59  ls
    60  history > 02-Docker/Day2_History.txt 
+   61  ls
+   62  git add . ; git commit -m "02-Docker/Demo02"; git push 
+   63  echo "======================= Demo 3 ==========================="
+   64  docker images 
+   65  docker pull amitvashist7/my-python-webapp:v1
+   66  ls
+   67  cd 02-Docker/
+   68  ls
+   69  cd ..
+   70  ls
+   71  mkdir 03-Dockerfile/apache -p 
+   72  ls
+   73  cd 03-Dockerfile/
+   74  ls
+   75  cd apache/
+   76  ls
+   77  vim Dockerfile
+   78  docker ps 
+   79  docker run -it ubuntu 
+   80  docker ps 
+   81  cat Dockerfile 
+   82  docker images 
+   83  docker build -t mydemoapache-app
+   84  docker build -t mydemoapache-app:v1 .
+   85  vim Dockerfile 
+   86  docker build -t mydemoapache-app:v1 .
+   87  vim Dockerfile 
+   88  docker build -t mydemoapache-app:v1 .
+   89  docker images 
+   90  docker run -d mydemoapache-app:v1 
+   91  ls
+   92  vim Dockerfile 
+   93  rm -rf .Dockerfile.swp 
+   94  ls
+   95  vim Dockerfile 
+   96  docker build -t mydemoapache-app:v1 .
+   97  docker run -d mydemoapache-app:v1 
+   98  docker ps 
+   99  docker inspect bd80e73d8b26
+  100  curl "172.17.0.3"
+  101  ls
+  102  vim info.html
+  103  ls
+  104  vim Dockerfile 
+  105  curl 172.17.0.3
+  106  curl 172.17.0.3/info.html
+  107  docker build -t mydemoapache-app:v2 .
+  108  docker ps 
+  109  docker run -d mydemoapache-app:v2
+  110  docker images 
+  111  docker ps 
+  112  docker inspect 6ce28b028ffe
+  113  curl 172.17.0.3/info.html
+  114  curl 172.17.0.4/info.html
+  115  cd ..
+  116  ls
+  117  cd ..
+  118  ls
+  119  git add . ; git commit -m "02-Docker/Demo03"; git push 
+  120  ls
+  121  docker run -it ubuntu:16.04
+  122  history 
+  123  docker images 
+  124  docker ps 
+  125  docker attach 65fc50761303 
+  126  ks
+  127  ls
+  128  history > 02-Docker/Day2_History.txt 
