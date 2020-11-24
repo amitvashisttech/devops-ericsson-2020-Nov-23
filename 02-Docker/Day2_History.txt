@@ -1,0 +1,18 @@
+    1  git config credential.helper store
+    2  docker version 
+    3  systemctl status docker
+    4  systemctl start docker
+    5  systemctl enable docker
+    6  systemctl status docker
+    7  ls
+    8  docker run busybox echo "Welcome to the world of Docker."
+    9  docker run busybox echo "Hello World"
+   10  docker images 
+   11  docker run ubuntu echo "Hello World"
+   12  docker images 
+   13  docker run ubuntu:16.04 echo "Hello World"
+   14  docker images 
+   15  ls
+   16  cd 02-Docker/
+   17  ls
+   18  history > Day2_History.txt
