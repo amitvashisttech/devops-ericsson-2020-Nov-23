@@ -126,3 +126,92 @@
   126  ks
   127  ls
   128  history > 02-Docker/Day2_History.txt 
+  129  ls
+  130  git add . ; git commit -m "02-Docker/Demo03"; git push 
+  131  ls
+  132  docker ps -qa 
+  133  docker kill $(docker ps -qa )
+  134  docker rm $(docker ps -qa )
+  135  ls
+  136  docker ps 
+  137  docker ps -a
+  138  docker network ls 
+  139  docker network inspect 652f0b710ec3
+  140  ip addr 
+  141  docker images 
+  142  docker run -d --name test-apache-01 mydemoapache-app:v2
+  143  ip addr 
+  144  docker network inspect 652f0b710ec3
+  145  docker run -d --name test-apache-02 mydemoapache-app:v2
+  146  docker run -d --name test-apache-03 mydemoapache-app:v2
+  147  docker ps 
+  148  docker network inspect 652f0b710ec3
+  149  docker stop "test-apache-01"
+  150  docker kill "test-apache-01"
+  151  docker network inspect 652f0b710ec3
+  152  docker run -d --name test-apache-04 mydemoapache-app:v2
+  153  docker network inspect 652f0b710ec3
+  154  docker start "test-apache-01"
+  155  docker network inspect 652f0b710ec3
+  156  docker ps 
+  157  docker inspect test-apache-01
+  158  docker run -itd --name test-ping ubuntu:16.04
+  159  docker ps 
+  160  docker attach test-ping
+  161  ls
+  162  ip addr 
+  163  cd /var/run/docker/
+  164  ls
+  165  cd netns/
+  166  ls
+  167  ip netns 
+  168  pwd
+  169  ln -s /var/run/docker/netns /var/run/netns
+  170  ip netns 
+  171  ip netns -n 838592a8b583 ip addr 
+  172  ip netns 838592a8b583 ip addr 
+  173  ip netns 
+  174  ip netns --help
+  175  ip netns -h 
+  176  ip netns exec 838592a8b583 ip addr 
+  177  ip addr 
+  178  ip netns 
+  179  ip netns exec 5ac26478a5a2 ip addr 
+  180  ls
+  181  ip addr 
+  182  docker ps 
+  183  docker network inspect 652f0b710ec3
+  184  ip addr 
+  185  netstat -tulnp
+  186  docker images 
+  187  docker ps 
+  188  docker run -d -p 8081:80 --name public-cont-01 mydemoapache-app:v2 
+  189  docker ps 
+  190  netstat -tulnp
+  191  docker run -d -P --name public-cont-02 mydemoapache-app:v2 
+  192  docker run -d -P --name public-cont-03 mydemoapache-app:v2 
+  193  docker run -d -P --name public-cont-04 mydemoapache-app:v2 
+  194  docker ps 
+  195  netstat -tulnp
+  196  iptables -L
+  197  cd 
+  198  ls
+  199  cd MyGitLocalRepo/
+  200  ls
+  201  cd 03-Dockerfile/
+  202  ls
+  203  cd apache/
+  204  ls
+  205  vim info.html 
+  206  ls
+  207  vim Dockerfile 
+  208  docker build -t mydemoapache-app:v3 .
+  209  docker run -d -P --name public-cont-05 mydemoapache-app:v3
+  210  docker ps 
+  211  docker ps | wc -l 
+  212  iptables -L 
+  213  cd ..
+  214  ls
+  215  cd ..
+  216  ls
+  217  history > 02-Docker/Day2_History.txt 

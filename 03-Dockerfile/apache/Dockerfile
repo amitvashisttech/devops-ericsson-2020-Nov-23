@@ -9,6 +9,7 @@ RUN apt-get install apache2 -y
 
 # Expose the service
 EXPOSE 80
+EXPOSE 3306
 
 # Create a Custome Web Page
 COPY info.html /var/www/html/info.html
