@@ -215,3 +215,85 @@
   215  cd ..
   216  ls
   217  history > 02-Docker/Day2_History.txt 
+  218  git add . ; git commit -m "02-Docker/Demo04"; git push 
+  219  ls
+  220  d
+  221  'f;sad
+'fas'df;
+
+
+
+  222  sl
+  223  ls
+  224  docker pull amitvashist7/k8s-tiny-web 
+  225  docker ps 
+  226  docker images 
+  227  docker pull amitvashist7/k8s-tiny-web:2
+  228  docker pull amitvashist7/k8s-tiny-web:3
+  229  ls
+  230  docker images 
+  231  ls
+  232  echo "======================= Demo 5 ==========================="
+  233  docker volume ls 
+  234  docker volume create my-vol
+  235  docker volume ls 
+  236  docker volume inspect my-vol
+  237  ls -ltr /var/lib/docker/volumes/my-vol/_data
+  238  ls
+  239  docker images 
+  240  docker run -d -P --name devtestvol-1 --mount source=myvol,target=/var/www/html/amit mydemoapache-app:v3
+  241  docker run -d -P --name devtestvol-1 -v myvol:/var/www/html/amit mydemoapache-app:v3
+  242  docker ps 
+  243  docker inspect devtestvol-1
+  244  ls
+  245  docker ps 
+  246  ls
+  247  docker volumes 
+  248  cd /var/lib/docker/volumes/myvol/
+  249  ls
+  250  cd _data/
+  251  ls
+  252  echo "Welcome to Docker Volumes" > hello-vol.txt
+  253  docker run -d -P --name devtestvol-2 --volumes-from devtestvol-1 mydemoapache-app:v3
+  254  docker run -d -P --name devtestvol-3 --volumes-from devtestvol-1 mydemoapache-app:v3
+  255  docker ps 
+  256  ls
+  257  mv hello-vol.txt index.html
+  258  vim index.html 
+  259  ls
+  260  ip addr 
+  261  ls
+  262  cd 
+  263  ls
+  264  cd MyGitLocalRepo/
+  265  ls
+  266  docker kill $(docker ps -q)
+  267  docker rm $(docker ps -aq)
+  268  ls
+  269  docker ps 
+  270  docker ps -a
+  271  docker volume ls 
+  272  cd /var/lib/docker/volumes/myvol/_data/
+  273  ls
+  274  cat index.html 
+  275  myvolls
+  276  history 
+  277  docker run -d -P --name devtestvol-1 -v myvol:/var/www/html/amit mydemoapache-app:v3
+  278  docker ps 
+  279  docker run --name test -it busybox 
+  280  docker run --name test -it -v myvol:/myvol busybox 
+  281  docker run --name test-2 -it -v myvol:/myvol busybox 
+  282  ls 
+  283  cat info.html 
+  284  ls
+  285  docker kill $(docker ps -q)
+  286  docker rm $(docker ps -aq)
+  287  ls
+  288  cd ..
+  289  ls
+  290  cd ..
+  291  cd 
+  292  ls
+  293  cd MyGitLocalRepo/
+  294  ls
+  295  history > 02-Docker/Day2_History.txt 
