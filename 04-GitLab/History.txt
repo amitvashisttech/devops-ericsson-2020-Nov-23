@@ -1,20 +1,410 @@
- 300  git clone https://gitlab.com/amitvashisttech/my-first-project-25-nov-2020.git
+    1  git config credential.helper store
+    2  docker version 
+    3  systemctl status docker
+    4  systemctl start docker
+    5  systemctl enable docker
+    6  systemctl status docker
+    7  ls
+    8  docker run busybox echo "Welcome to the world of Docker."
+    9  docker run busybox echo "Hello World"
+   10  docker images 
+   11  docker run ubuntu echo "Hello World"
+   12  docker images 
+   13  docker run ubuntu:16.04 echo "Hello World"
+   14  docker images 
+   15  ls
+   16  cd 02-Docker/
+   17  ls
+   18  history > Day2_History.txt
+   19  cd ..
+   20  ls
+   21  git add . ; git commit -m "02-Docker"; git push 
+   22  start docker 
+   23  systemctl start docker
+   24  systemctl status docker
+   25  history 
+   26  ls
+   27  git config list
+   28  git config --list
+   29  ls
+   30  history 
+   31  git config --list
+   32  ls
+   33  echo "======================= Demo 2 ==========================="
+   34  docker images 
+   35  cat /etc/os-release 
+   36  docker run -it ubuntu
+   37  docker ps 
+   38  docker ps -a
+   39  docker start 61c405630d9d
+   40  docker ps 
+   41  docker attach 61c405630d9d
+   42  docker ps 
+   43  docker attach 61c405630d9d
+   44  docker ps 
+   45  docker attach 61c405630d9d
+   46  ls
+   47  docker run -it --name mytest-01 ubuntu:16.04
+   48  docker ps 
+   49  docker ps -q
+   50  docker stop $(docker ps -q)
+   51  docker ps 
+   52  docker ps -a 
+   53  docker ps -aq
+   54  docker rm $(docker ps -aq)
+   55  docker ps -a 
+   56  docker images 
+   57  ls
+   58  history 
+   59  ls
+   60  history > 02-Docker/Day2_History.txt 
+   61  ls
+   62  git add . ; git commit -m "02-Docker/Demo02"; git push 
+   63  echo "======================= Demo 3 ==========================="
+   64  docker images 
+   65  docker pull amitvashist7/my-python-webapp:v1
+   66  ls
+   67  cd 02-Docker/
+   68  ls
+   69  cd ..
+   70  ls
+   71  mkdir 03-Dockerfile/apache -p 
+   72  ls
+   73  cd 03-Dockerfile/
+   74  ls
+   75  cd apache/
+   76  ls
+   77  vim Dockerfile
+   78  docker ps 
+   79  docker run -it ubuntu 
+   80  docker ps 
+   81  cat Dockerfile 
+   82  docker images 
+   83  docker build -t mydemoapache-app
+   84  docker build -t mydemoapache-app:v1 .
+   85  vim Dockerfile 
+   86  docker build -t mydemoapache-app:v1 .
+   87  vim Dockerfile 
+   88  docker build -t mydemoapache-app:v1 .
+   89  docker images 
+   90  docker run -d mydemoapache-app:v1 
+   91  ls
+   92  vim Dockerfile 
+   93  rm -rf .Dockerfile.swp 
+   94  ls
+   95  vim Dockerfile 
+   96  docker build -t mydemoapache-app:v1 .
+   97  docker run -d mydemoapache-app:v1 
+   98  docker ps 
+   99  docker inspect bd80e73d8b26
+  100  curl "172.17.0.3"
+  101  ls
+  102  vim info.html
+  103  ls
+  104  vim Dockerfile 
+  105  curl 172.17.0.3
+  106  curl 172.17.0.3/info.html
+  107  docker build -t mydemoapache-app:v2 .
+  108  docker ps 
+  109  docker run -d mydemoapache-app:v2
+  110  docker images 
+  111  docker ps 
+  112  docker inspect 6ce28b028ffe
+  113  curl 172.17.0.3/info.html
+  114  curl 172.17.0.4/info.html
+  115  cd ..
+  116  ls
+  117  cd ..
+  118  ls
+  119  git add . ; git commit -m "02-Docker/Demo03"; git push 
+  120  ls
+  121  docker run -it ubuntu:16.04
+  122  history 
+  123  docker images 
+  124  docker ps 
+  125  docker attach 65fc50761303 
+  126  ks
+  127  ls
+  128  history > 02-Docker/Day2_History.txt 
+  129  ls
+  130  git add . ; git commit -m "02-Docker/Demo03"; git push 
+  131  ls
+  132  docker ps -qa 
+  133  docker kill $(docker ps -qa )
+  134  docker rm $(docker ps -qa )
+  135  ls
+  136  docker ps 
+  137  docker ps -a
+  138  docker network ls 
+  139  docker network inspect 652f0b710ec3
+  140  ip addr 
+  141  docker images 
+  142  docker run -d --name test-apache-01 mydemoapache-app:v2
+  143  ip addr 
+  144  docker network inspect 652f0b710ec3
+  145  docker run -d --name test-apache-02 mydemoapache-app:v2
+  146  docker run -d --name test-apache-03 mydemoapache-app:v2
+  147  docker ps 
+  148  docker network inspect 652f0b710ec3
+  149  docker stop "test-apache-01"
+  150  docker kill "test-apache-01"
+  151  docker network inspect 652f0b710ec3
+  152  docker run -d --name test-apache-04 mydemoapache-app:v2
+  153  docker network inspect 652f0b710ec3
+  154  docker start "test-apache-01"
+  155  docker network inspect 652f0b710ec3
+  156  docker ps 
+  157  docker inspect test-apache-01
+  158  docker run -itd --name test-ping ubuntu:16.04
+  159  docker ps 
+  160  docker attach test-ping
+  161  ls
+  162  ip addr 
+  163  cd /var/run/docker/
+  164  ls
+  165  cd netns/
+  166  ls
+  167  ip netns 
+  168  pwd
+  169  ln -s /var/run/docker/netns /var/run/netns
+  170  ip netns 
+  171  ip netns -n 838592a8b583 ip addr 
+  172  ip netns 838592a8b583 ip addr 
+  173  ip netns 
+  174  ip netns --help
+  175  ip netns -h 
+  176  ip netns exec 838592a8b583 ip addr 
+  177  ip addr 
+  178  ip netns 
+  179  ip netns exec 5ac26478a5a2 ip addr 
+  180  ls
+  181  ip addr 
+  182  docker ps 
+  183  docker network inspect 652f0b710ec3
+  184  ip addr 
+  185  netstat -tulnp
+  186  docker images 
+  187  docker ps 
+  188  docker run -d -p 8081:80 --name public-cont-01 mydemoapache-app:v2 
+  189  docker ps 
+  190  netstat -tulnp
+  191  docker run -d -P --name public-cont-02 mydemoapache-app:v2 
+  192  docker run -d -P --name public-cont-03 mydemoapache-app:v2 
+  193  docker run -d -P --name public-cont-04 mydemoapache-app:v2 
+  194  docker ps 
+  195  netstat -tulnp
+  196  iptables -L
+  197  cd 
+  198  ls
+  199  cd MyGitLocalRepo/
+  200  ls
+  201  cd 03-Dockerfile/
+  202  ls
+  203  cd apache/
+  204  ls
+  205  vim info.html 
+  206  ls
+  207  vim Dockerfile 
+  208  docker build -t mydemoapache-app:v3 .
+  209  docker run -d -P --name public-cont-05 mydemoapache-app:v3
+  210  docker ps 
+  211  docker ps | wc -l 
+  212  iptables -L 
+  213  cd ..
+  214  ls
+  215  cd ..
+  216  ls
+  217  history > 02-Docker/Day2_History.txt 
+  218  git add . ; git commit -m "02-Docker/Demo04"; git push 
+  219  ls
+  220  d
+  221  'f;sad
+'fas'df;
+
+
+
+  222  sl
+  223  ls
+  224  docker pull amitvashist7/k8s-tiny-web 
+  225  docker ps 
+  226  docker images 
+  227  docker pull amitvashist7/k8s-tiny-web:2
+  228  docker pull amitvashist7/k8s-tiny-web:3
+  229  ls
+  230  docker images 
+  231  ls
+  232  echo "======================= Demo 5 ==========================="
+  233  docker volume ls 
+  234  docker volume create my-vol
+  235  docker volume ls 
+  236  docker volume inspect my-vol
+  237  ls -ltr /var/lib/docker/volumes/my-vol/_data
+  238  ls
+  239  docker images 
+  240  docker run -d -P --name devtestvol-1 --mount source=myvol,target=/var/www/html/amit mydemoapache-app:v3
+  241  docker run -d -P --name devtestvol-1 -v myvol:/var/www/html/amit mydemoapache-app:v3
+  242  docker ps 
+  243  docker inspect devtestvol-1
+  244  ls
+  245  docker ps 
+  246  ls
+  247  docker volumes 
+  248  cd /var/lib/docker/volumes/myvol/
+  249  ls
+  250  cd _data/
+  251  ls
+  252  echo "Welcome to Docker Volumes" > hello-vol.txt
+  253  docker run -d -P --name devtestvol-2 --volumes-from devtestvol-1 mydemoapache-app:v3
+  254  docker run -d -P --name devtestvol-3 --volumes-from devtestvol-1 mydemoapache-app:v3
+  255  docker ps 
+  256  ls
+  257  mv hello-vol.txt index.html
+  258  vim index.html 
+  259  ls
+  260  ip addr 
+  261  ls
+  262  cd 
+  263  ls
+  264  cd MyGitLocalRepo/
+  265  ls
+  266  docker kill $(docker ps -q)
+  267  docker rm $(docker ps -aq)
+  268  ls
+  269  docker ps 
+  270  docker ps -a
+  271  docker volume ls 
+  272  cd /var/lib/docker/volumes/myvol/_data/
+  273  ls
+  274  cat index.html 
+  275  myvolls
+  276  history 
+  277  docker run -d -P --name devtestvol-1 -v myvol:/var/www/html/amit mydemoapache-app:v3
+  278  docker ps 
+  279  docker run --name test -it busybox 
+  280  docker run --name test -it -v myvol:/myvol busybox 
+  281  docker run --name test-2 -it -v myvol:/myvol busybox 
+  282  ls 
+  283  cat info.html 
+  284  ls
+  285  docker kill $(docker ps -q)
+  286  docker rm $(docker ps -aq)
+  287  ls
+  288  cd ..
+  289  ls
+  290  cd ..
+  291  cd 
+  292  ls
+  293  cd MyGitLocalRepo/
+  294  ls
+  295  history > 02-Docker/Day2_History.txt 
+  296  git add . ; git commit -m "02-Docker/Demo05"; git push 
+  297  ls
+  298  cd 
+  299  ls
+  300  git clone https://gitlab.com/amitvashisttech/my-first-project-25-nov-2020.git
   301  ls
   302  cd my-first-project-25-nov-2020/
   303  ls
-  304  git branch
+  304  git branch 
   305  echo "Hello World" > Hello.txt
   306  ls
   307  git add . ; git commit -m "First Commit"
-  308  git push
+  308  git push 
   309  ls
   310  git pull
   311  ls
   312  cd Demo01/
   313  ls
-  314  cat Dockerfile
-  315  docker build -t gitlabdockerimage-httpd:v1 .
+  314  cat Dockerfile 
+  315  docker build -t gitlabdockerimage-httpd:v1 . 
   316  ls
-  317  docker images
+  317  docker images 
   318  docker run -d -p 8090:80 gitlabdockerimage-httpd:v1
-  319  docker ps
+  319  docker ps 
+  320  ls
+  321  cd ..
+  322  l
+  323  scd ..
+  324  l
+  325  cd ..
+  326  ls
+  327  cd MyGitLocalRepo/
+  328  ls
+  329  mkdir 04-GitLab
+  330  ls
+  331  cp -rf ../my-first-project-25-nov-2020/* 04-GitLab/
+  332  ls
+  333  history 
+  334  vim 04-GitLab/History.txt
+  335  ls
+  336  git add . ; git commit -m "04-GitLab"; git push 
+  337  ls
+  338  docker kill $(docker ps -aq)
+  339  docker rm $(docker ps -aq)
+  340  ls
+  341  cd 
+  342  ls
+  343  cd my-first-project-25-nov-2020/
+  344  ls
+  345  git pull 
+  346  ls
+  347  cat Hello.txt 
+  348  cd /tmp/
+  349  ls
+  350  git clone https://gitlab.com/testgroupav/my-first-project-25-nov-2020.git
+  351  ls
+  352  cd my-first-project-25-nov-2020/
+  353  ls
+  354  cat Hello.txt 
+  355  git config --list 
+  356  cd 
+  357  ls
+  358  cd my-first-project-25-nov-2020/
+  359  ls
+  360  git branch 
+  361  git branch mydev-branch
+  362  git branch 
+  363  git checkout mydev-branch
+  364  ls
+  365  cd ..
+  366  ls
+  367  cd my-first-project-25-nov-2020/
+  368  ls
+  369  git config --list 
+  370  ls
+  371  cd ..
+  372  ls
+  373  rm -rf my-first-project-25-nov-2020/
+  374  git clone https://gitlab.com/amitvashisttech/my-first-project-25-nov-2020.git
+  375  ls
+  376  cd my-first-project-25-nov-2020/
+  377  git branch 
+  378  ls
+  379  git branch mydev-branch
+  380  git checkout mydev-branch
+  381  ls
+  382  echo "Welcome to mydev-branch" mydev-branch.txt
+  383  ls
+  384  echo "Welcome to mydev-branch" > mydev-branch.txt
+  385  ls
+  386  git add . ; git commit -m "mydev-branch.txt"; git push 
+  387  git push --set-upstream origin mydev-branch
+  388  ls
+  389  cd 
+  390  ls
+  391  wget wget https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb
+  392  ls
+  393  dpkg -i gitlab-runner_amd64.deb 
+  394  gitlab-runner --version 
+  395  gitlab-runner staus
+  396  gitlab-runner --version 
+  397  gitlab-runner status
+  398  gitlab-runner stop 
+  399  gitlab-runner status
+  400  gitlab-runner register
+  401  gitlab-runner start
+  402  ls
+  403  cd MyGitLocalRepo/
+  404  ls
+  405  history 
+  406  history > 04-GitLab/History.txt 
