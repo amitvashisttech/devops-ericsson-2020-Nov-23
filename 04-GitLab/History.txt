@@ -1,0 +1,20 @@
+ 300  git clone https://gitlab.com/amitvashisttech/my-first-project-25-nov-2020.git
+  301  ls
+  302  cd my-first-project-25-nov-2020/
+  303  ls
+  304  git branch
+  305  echo "Hello World" > Hello.txt
+  306  ls
+  307  git add . ; git commit -m "First Commit"
+  308  git push
+  309  ls
+  310  git pull
+  311  ls
+  312  cd Demo01/
+  313  ls
+  314  cat Dockerfile
+  315  docker build -t gitlabdockerimage-httpd:v1 .
+  316  ls
+  317  docker images
+  318  docker run -d -p 8090:80 gitlabdockerimage-httpd:v1
+  319  docker ps
