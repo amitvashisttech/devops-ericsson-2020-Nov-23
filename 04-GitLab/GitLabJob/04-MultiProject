@@ -1,0 +1,71 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build_project_red:
+  stage: build
+  script:
+        - echo "Welcome to the project_red - Build"
+  tags:
+        - ci
+
+test_project_red:
+  stage: test
+  script:
+        - echo "Welcome to the project_red - Test"
+  tags:
+        - ci
+
+deploy_project_red:
+  stage: deploy
+  script:
+        - echo "Welcome to the project_red - Deploy"
+  tags:
+        - ci
+
+build_project_blue:
+  stage: build
+  script:
+        - echo "Welcome to the project_blue - Build"
+  tags:
+        - ci
+
+test_project_blue:
+  stage: test
+  script:
+        - echo "Welcome to the project_blue - Test"
+  tags:
+        - ci
+
+deploy_project_blue:
+  stage: deploy
+  script:
+        - echo "Welcome to the project_blue - Deploy"
+  tags:
+        - ci
+
+
+build_project_green:
+  stage: build
+  script:
+        - echo "Welcome to the project_green - Build"
+  tags:
+        - ci
+
+test_project_green:
+  stage: test
+  script:
+        - echo "Welcome to the project_green - Test"
+  tags:
+        - ci
+
+deploy_project_green:
+  stage: deploy
+  script:
+        - echo "Welcome to the project_green - Deploy"
+  tags:
+        - ci
+
+
+
