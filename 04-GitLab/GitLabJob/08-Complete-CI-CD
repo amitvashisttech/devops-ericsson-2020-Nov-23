@@ -1,0 +1,58 @@
+image: docker:latest
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay
+  SPRING_PROFILES_ACTIVE: gitlab-ci
+  TEST_NAME: amitvashist7/gitlabcicd-petclinic-app-demo:$CI_COMMIT_REF_NAME
+
+stages:
+  - test
+  - build
+  - package
+  - deploy
+
+
+maven-test:
+  image: maven:3-jdk-8
+  stage: test
+  script:
+        - cd petclinic-code
+        - "mvn test -B"
+  artifacts:
+    paths:
+        - petclinic-code/target/surefire-reports/TEST-*.xml
+    reports:
+      junit: petclinic-code/target/surefire-reports/TEST-*.xml
+
+
+
+maven-build:
+  image: maven:3-jdk-8
+  stage: build
+  script:
+        - cd petclinic-code
+        - "mvn package -B"
+  artifacts:
+    paths:
+        - petclinic-code/target/*.war
+
+
+docker-build:
+  stage: package
+  script:
+        - cd petclinic-code/
+        - docker build -t $TEST_NAME . 
+        - docker login -u amitvashist7 -p $CI_BUILD_TOKEN
+        - docker push $TEST_NAME
+
+docker-deployment:
+  stage: deploy
+  script:
+       - sudo docker pull $TEST_NAME
+       - sudo docker kill $(sudo docker ps -q)
+       - sudo  docker rm $(sudo docker ps -qa)
+       - sudo  docker run -d -p 38080:8080 --name  gitlabcicd-petclinic-app $TEST_NAME
+  tags:
+      - ci 
