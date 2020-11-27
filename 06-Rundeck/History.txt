@@ -1,0 +1,28 @@
+    1  ls
+    2  mkdir 06-Rundeck
+    3  ls
+    4  cd ; wget https://dl.bintray.com/rundeck/rundeck-deb/rundeck_3.3.6.20201111-1_all.deb
+    5  ls
+    6  cd MyGitLocalRepo/
+    7  ls
+    8  history 
+    9  ls
+   10  java --version 
+   11  java -version 
+   12  ls
+   13  cd 
+   14  ls
+   15  dpkg -i rundeck_3.3.6.20201111-1_all.deb 
+   16  systemctl status rundeckd
+   17  vi /etc/rundeck/rundeck-config.properties 
+   18  ls
+   19  systemctl status rundeckd
+   20  systemctl start rundeckd
+   21  systemctl enable rundeckd
+   22  systemctl status rundeckd
+   23  ls
+   24  netstat -tulnp 
+   25  ls
+   26  cd MyGitLocalRepo/
+   27  ls
+   28  history > 06-Rundeck/History.txt
