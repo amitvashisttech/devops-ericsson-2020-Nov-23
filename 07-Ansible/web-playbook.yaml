@@ -1,0 +1,26 @@
+---
+
+- hosts: web
+  sudo: yes 
+  tasks: 
+  - name: Install Apache Packages 
+    apt: name=apache2 state=present
+
+  - name: Start Apache Service
+    service: name=apache2 state=started
+   
+  - name: Deploy Custom WebPage
+    template: src=templates/info.j2 dest=/var/www/html/info.html
+  
+  - name: Static Web Page 
+    copy: src=templates/index.html dest=/var/www/html/index.html
+
+
+
+
+- hosts: 172.31.0.102
+  sudo: yes 
+  tasks: 
+  - name: Static Web Page 
+    copy: src=templates/web.html dest=/var/www/html/web.html
+
