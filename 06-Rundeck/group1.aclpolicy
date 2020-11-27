@@ -1,0 +1,30 @@
+# Project scope
+description: project level ACL.
+context:
+  project: 'MyProject'
+for:
+  resource:
+    - equals:
+        kind: event
+      allow: [read] # allow read of all activity (jobs run by all users)
+  job:
+    - allow: [run, read] # allow read of all jobs
+  adhoc:
+    - deny: run # don't allow adhoc execution
+  node:
+    - allow: [read, run] # allow run on nodes with the tag 'mytag'
+by:
+  group: group1
+---
+
+# Application scope
+description: application level ACL.
+context:
+  application: 'rundeck'
+for:
+  project:
+    - match:
+        name: 'MyProject'
+      allow: [read]
+by:
+  group: group1
